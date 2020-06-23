@@ -1,0 +1,156 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int resp, key=1, XT=0, XE=0, XS=0, BA=0, CC=0, GA=0, SD=0, FA=0;
+		double conta=0, final=0, TotalFinal=0;
+		while(key !=0){
+		Console.WriteLine("==================");
+		Console.WriteLine("=    Bem-Vindo   =");
+		Console.WriteLine("==================");
+		Console.WriteLine("=                =");
+		Console.WriteLine("= Menu principal =");
+		Console.WriteLine("=                =");
+		Console.WriteLine("= 1- Lanches     =");
+		Console.WriteLine("= 2- Bebidas     =");
+		Console.WriteLine("= 3- Conta       =");
+		Console.WriteLine("==================");
+		resp = int.Parse(Console.ReadLine());
+		Console.Clear();
+		key=1;
+		switch(resp){
+			case 1:
+				while(key == 1){
+					Console.WriteLine("=======================");
+					Console.WriteLine("=    Menu de lanches  =");
+					Console.WriteLine("=======================");
+					Console.WriteLine("=                     =");
+					Console.WriteLine("= 1- X-TUDO R$ 10,00  =");
+					Console.WriteLine("= 2- X-EGG R$  7,00   =");
+					Console.WriteLine("= 3- X-SALADA R$ 6,00 =");
+					Console.WriteLine("= 4- BAURU R$ 5,00    =");
+					Console.WriteLine("= 0- Voltar           =");
+					Console.WriteLine("=======================");
+					resp = int.Parse(Console.ReadLine());
+					Console.Clear();
+						switch(resp){
+						case 0:
+							key = 2;
+							break;
+						case 1:
+							conta = (conta+10.00);
+							XT++;
+							break;
+						case 2:
+							conta = (conta+7.00);
+							XE++;
+							break;
+						case 3:
+							conta = (conta+6.00);
+							XS++;
+							break;
+						case 4:
+							conta = (conta+5.00);
+							BA++;
+							break;
+						default:
+							Console.WriteLine("opção invalida");
+							break;
+						}
+					}
+				break;
+				case 2:
+					while(key == 1){
+						Console.WriteLine("=========================");
+						Console.WriteLine("=    Menu de bebidas    =");
+						Console.WriteLine("=========================");
+						Console.WriteLine("=                       =");
+						Console.WriteLine("= 1- COCA-COLA R$ 8,00  =");
+						Console.WriteLine("= 2- GUARANÁ R$ 7,00    =");
+						Console.WriteLine("= 3- LIMONADA R$ 6,00   =");
+						Console.WriteLine("= 4- FANTA R$ 6,00      =");
+						Console.WriteLine("= 0- Voltar             =");
+						Console.WriteLine("=========================");
+						resp = int.Parse(Console.ReadLine());
+						Console.Clear();
+							switch(resp){
+							case 0:
+								key = 2;
+								break;
+							case 1:
+								conta = (conta+8.00);
+								CC++;
+								break;
+							case 2:
+								conta = (conta+7.00);
+								GA++;
+								break;
+							case 3:
+								conta = (conta+6.00);
+								SD++;
+								break;
+							case 4:
+								conta = (conta+6.00);
+								FA++;
+								break;
+							default:
+								Console.WriteLine("opção invalida");
+								break;
+							}
+						}
+					break;
+					case 3:
+						Console.WriteLine("   PRODUTO   QTDE    VALOR   ");
+						Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+
+						if(XT > 0){
+							final =(XT*10);
+							TotalFinal= (TotalFinal+final);
+							Console.WriteLine("X-TUDO        {0}      {1}",XT,final.ToString("#0.00"));
+						}
+						if(XE > 0){
+							final =(XE*7);
+							TotalFinal= (TotalFinal+final);
+							Console.WriteLine("X-EGG         {0}      {1}",XE,final.ToString("#0.00"));
+						}
+						if(XS > 0){
+							final =(XS*6);
+							TotalFinal= (TotalFinal+final);
+							Console.WriteLine("X-SALADA      {0}      {1}",XS,final.ToString("#0.00"));
+						}
+						if(BA > 0){
+							final =(BA*5); 
+							TotalFinal= (TotalFinal+final);
+							Console.WriteLine("BAURU         {0}      {1}",BA,final.ToString("#0.00"));
+						}
+						if(CC > 0){
+							final =(CC*8);
+							TotalFinal= (TotalFinal+final);
+							Console.WriteLine("Coca-cola     {0}      {1}",CC,final.ToString("#0.00"));
+						}
+						if(GA > 0){
+							final =(GA*7);
+							TotalFinal= (TotalFinal+final);
+							Console.WriteLine("Guarana       {0}      {1}",GA,final.ToString("#0.00"));
+						}
+						if(SD > 0){
+							final =(SD*10);
+							TotalFinal= (TotalFinal+final);
+							Console.WriteLine("Soda          {0}      {1}",SD,final.ToString("#0.00"));
+						}
+						if(FA > 0){
+							final =(FA*10);
+							TotalFinal= (TotalFinal+final);
+							Console.WriteLine("Fanta         {0}      {1}",FA,final.ToString("#0.00"));
+						}
+						Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+						Console.WriteLine("TOTAL:               {0}",TotalFinal.ToString("#0.00"));
+						Console.WriteLine("");
+						Console.WriteLine("");
+						break;
+			}
+		}
+	}
+}
